@@ -46,16 +46,16 @@ router.post(
       res.json(savedNote)
     } catch (error) {
         console.log(error.message);
-        res.status(500).send("Internal surver error");
+        res.status(500).send("Internal surver error 123");
     }
   }
 );
 
 // Route 3: get all the notes using Put: "/api/note/updatenote/:id" login required
 router.put("/updatenote/:id", fetchuser, async (req, res) => {
+  const {title, description, tag} = req.body;
     try {
         
-    const {title, description, tag} = req.body;
     const newNote = {};
     if(title){newNote.title = title};
     if(description){newNote.description = description};
